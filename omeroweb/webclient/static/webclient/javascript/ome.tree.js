@@ -992,27 +992,6 @@ $(function() {
                         OME.handleChown(WEBCLIENT.URLS.webindex, WEBCLIENT.URLS.static_webclient);
                     }
                 };
-                
-                config["share"] = {
-                    "label" : "Create share",
-                    "_disabled": function(){
-                        var selected = $.jstree.reference('#dataTree').get_selected(true);
-                        var enabled = true;
-                        $.each(selected, function(index, node) {
-                            if (node.type != 'image' || !OME.nodeHasPermission(node, 'canLink')) {
-                                enabled = false;
-                                // Break out of $.each
-                                return false;
-                            }
-                        });
-                        return !enabled;
-                    },
-                    "icon"  : WEBCLIENT.URLS.static_webclient + 'image/icon_toolbar_share2.png',
-                    "action": function(){
-                        // We get_selected() within createShare()
-                        OME.createShare();
-                    }
-                };
 
                 config["renderingsettings"] = {
                     "label" : "Rendering Settings...",
