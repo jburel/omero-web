@@ -4363,8 +4363,12 @@ def figure_script(request, scriptName, conn=None, **kwargs):
             thumbSets.append({"name": "images", "imageTags": imageTags})
             tags.extend(ts)
             parent = conn.getObject("Image", imageIds[0]).getParent()
-            figureName = parent.getName() or "Thumbnail Figure"
-            context["parent_id"] = parent.getId()
+            if parent is not None:
+                figureName = parent.getName()
+                context["parent_id"] = parent.getId()
+            else:
+                figureName = "Thumbnail Figure"
+                context["parent_id"] = -1
         uniqueTagIds = set()  # remove duplicates
         uniqueTags = []
         for t in tags:
