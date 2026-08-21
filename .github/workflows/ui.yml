@@ -21,4 +21,4 @@ jobs:
       - name: Install dependencies
         run: cat /etc/os-release
       - name: Install Playwright Browsers
-        run: npm install && npx playwright install --with-deps
+        run: npx playwright install --with-deps
