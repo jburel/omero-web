@@ -21,4 +21,6 @@ jobs:
       - name: Install playwright-cli
         run: npm install -g @playwright/cli@latest
       - name: install install-browser
-        run: playwright-cli install-browser --with-deps 
+        run: playwright-cli install-browser --with-deps
+      - name:
+        run: playwright-cli test
