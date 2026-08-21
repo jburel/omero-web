@@ -23,4 +23,4 @@ jobs:
       - name: install install-browser
         run: playwright-cli install-browser --with-deps
       - name:
-        run: playwright-cli test
+        run: playwright test
