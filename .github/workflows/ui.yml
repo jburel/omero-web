@@ -20,5 +20,7 @@ jobs:
           python-version: ${{ matrix.node-version }}
       - name: Install dependencies
         run: cat /etc/os-release
+      - name: Check mirrors
+        run: cat /etc/apt/apt-mirrors.txt
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
