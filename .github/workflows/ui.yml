@@ -21,6 +21,6 @@ jobs:
       - name: Install dependencies
         run: cat /etc/os-release
       - name: Check mirrors
-        run: cat /etc/apt/apt-mirrors.txt
+        run: cat /etc/apt/sources.list.d/ubuntu.sources
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
